@@ -1,10 +1,10 @@
 CC = clang
 CXX = clang++ -std=c++17
 LDFLAGS = lib/glfw/src/libglfw3.a lib/glad/src/glad.o
-LDFLAGS += -Ilib/glfw/include -Ilib/glad/include
+LDFLAGS += -Ilib/glfw/include -Ilib/glad/include -Isrc
 LDFLAGS += -framework OpenGL -framework IOKit -framework CoreVideo -framework Cocoa
 
-SRC = $(wildcard src/*.cpp)
+SRC = $(wildcard src/**/*.cpp src/**/**/*.cpp)
 OBJ = $(SRC:.c=.o)
 BIN = bin
 

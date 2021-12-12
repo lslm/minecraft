@@ -10,6 +10,8 @@ BIN = bin
 
 all: dirs libs game
 
+debug: dirs libs game_debug
+
 dirs:
 	mkdir -p ./$(BIN)
 
@@ -19,6 +21,9 @@ libs:
 
 game: $(OBJ)
 	$(CXX) -o $(BIN)/minecraft $^ $(LDFLAGS)
+
+game_debug: $(OBJ)
+	$(CXX) -g  -o $(BIN)/minecraft.a $^ $(LDFLAGS)
 
 %.o: %.cpp
 	$(CXX) -o $@ -c $<

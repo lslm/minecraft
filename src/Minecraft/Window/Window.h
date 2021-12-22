@@ -1,14 +1,23 @@
 #pragma once
 #include "Minecraft/Core.h"
+#include "Minecraft/Game.h"
 
 namespace Minecraft
 {
-    struct Window
+    class Window
     {
-        GLFWwindow * nativeWindow;
-        int width;
-        int height;
+        public:
+            Window(int width, int height, const char* title);
+            ~Window();
 
-        static Window* createWindow(int width, int height, const char* title);
+            void Run();
+
+        private:
+            GLFWwindow * nativeWindow;
+            int width;
+            int height;
+
+            void ConfigureEventsCallbacks();
+            bool shouldClose();
     };
 }

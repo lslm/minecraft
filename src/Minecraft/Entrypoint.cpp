@@ -8,16 +8,16 @@ const unsigned int WINDOW_HEIGHT = 800;
 
 int main()
 {
-  Window window = Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Minecraft Clone");
+    Window window = Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Minecraft Clone");
 
-  if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
-  {
-    printf("Faild to initialize Glad\n");
-    glfwTerminate();
-    return -1;
-  }
+    if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+    {
+        printf("Faild to initialize Glad\n");
+        glfwTerminate();
+        return -1;
+    }
 
-  window.Run();
+    window.Run();
 
-  glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+    glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 }

@@ -38,7 +38,6 @@ void errorCallback( int error, const char *msg ) {
 
 namespace Minecraft
 {
-    
     Window::Window(int width, int height, const char* title)
     {
         glfwSetErrorCallback(errorCallback);
@@ -64,6 +63,7 @@ namespace Minecraft
         }
 
         glfwMakeContextCurrent(nativeWindow);
+        ConfigureEventsCallbacks();
     }
 
     Window::~Window() {
